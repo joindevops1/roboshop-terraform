@@ -117,7 +117,7 @@ resource "aws_security_group_rule" "mongodb_user" {
      security_group_id = module.mongodb.sg_id
 }
 
-resource "aws_security_group_rule" "mongodb_redis" {
+resource "aws_security_group_rule" "redis_user" {
      source_security_group_id = module.user.sg_id
      type             = "ingress"
      from_port = 6379
@@ -126,7 +126,7 @@ resource "aws_security_group_rule" "mongodb_redis" {
      security_group_id = module.redis.sg_id
 }
 
-resource "aws_security_group_rule" "mongodb_cart" {
+resource "aws_security_group_rule" "redis_cart" {
      source_security_group_id = module.cart.sg_id
      type             = "ingress"
      from_port = 6379
