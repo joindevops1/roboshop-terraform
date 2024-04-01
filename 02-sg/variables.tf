@@ -1,8 +1,8 @@
 variable "common_tags" {
   default = {
-    project = "roboshop"
-    environment = "dev"
-    terraform = "true"
+    Project     = "roboshop"
+    Environment = "dev"
+    Terraform   = "true"
   }
 }
 
@@ -14,7 +14,7 @@ variable "project_name" {
   default = "roboshop"
 }
 variable "environment" {
-   default = "dev"   
+  default = "dev"
 }
 
 variable "mongodb_sg_ingress_rules" {
