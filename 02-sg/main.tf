@@ -98,6 +98,16 @@ module "web" {
    #sg_ingress_rules = var.web_sg_ingress_rules
 }
 
+module "vpn" {
+   source = "../../terraform-aws-security-group"
+   project_name = var.project_name
+   environment = var.environment
+   sg_description = "SG for vpn"
+   vpc_id = data.aws_vpc.default.id
+   sg_name = "vpn"
+   #sg_ingress_rules = var.web_sg_ingress_rules
+}
+
 #mongodb accepting connection form catalogue instance
 resource "aws_security_group_rule" "mongodb_catalogue" {
      source_security_group_id = module.catalogue.sg_id
